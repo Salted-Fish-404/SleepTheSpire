@@ -47,3 +47,6 @@ layout_mode = 2
 
 [node name="CardUI3" parent="BattleUI/Hand" instance=ExtResource("2_pgc6f")]
 layout_mode = 2
+
+[node name="CardUI4" parent="BattleUI/Hand" instance=ExtResource("2_pgc6f")]
+layout_mode = 2

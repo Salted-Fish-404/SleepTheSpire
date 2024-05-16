@@ -29,6 +29,5 @@ func _on_drop_point_detector_area_entered(area):
 	if not targets.has(area):
 		targets.append(area)
 
-
 func _on_drop_point_detector_area_exited(area):
 	targets.erase(area)
