@@ -1,6 +1,7 @@
 class_name CardUI
 extends Control
 
+#定义请求信号
 signal reparent_requested(which_card_ui: CardUI)
 
 @export var card: Card
@@ -39,4 +40,6 @@ func _on_drop_point_detector_area_entered(area):
 
 func _on_drop_point_detector_area_exited(area):
 	targets.erase(area)
+
+
 
