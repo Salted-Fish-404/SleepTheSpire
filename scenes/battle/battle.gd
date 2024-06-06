@@ -42,10 +42,3 @@ func _on_player_died() -> void:
 	Events.battle_over_screen_requested.emit("坏灭！", BattleOverPanel.Type.LOSE)
 
 
-
-
-
-
-
-
-
