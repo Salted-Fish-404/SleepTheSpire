@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_em2pa"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_1ixcw"]
 [ext_resource type="PackedScene" uid="uid://bxwen1tflmn0k" path="res://scenes/enemy/enemy.tscn" id="2_bvrab"]
-[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/8_bit_iced_village_lofi.mp3" id="3_dvatg"]
+[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/audio/8_bit_iced_village_lofi.mp3" id="3_dvatg"]
 [ext_resource type="PackedScene" uid="uid://c2keptj1ftuhk" path="res://scenes/player/player.tscn" id="3_ikovx"]
 [ext_resource type="PackedScene" uid="uid://ccth5ifnuiy4h" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_pu53w"]
 [ext_resource type="Resource" uid="uid://b3jf8oboj7n6n" path="res://characters/warrior/warrior.tres" id="4_2db5p"]

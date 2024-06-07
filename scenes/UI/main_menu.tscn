@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://cthjxpyg7ea0h"]
+
+[ext_resource type="Texture2D" uid="uid://dnfbippu842mh" path="res://art/picture/background_spire.png" id="1_8my4s"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_b044y"]
+[ext_resource type="Texture2D" uid="uid://h50nqkpghwj7" path="res://art/picture/4.png" id="2_koocq"]
+[ext_resource type="Texture2D" uid="uid://djat25nga0hek" path="res://art/picture/2.png" id="3_2vd4q"]
+[ext_resource type="Texture2D" uid="uid://bqqw1h6kjs7pi" path="res://art/picture/3.png" id="4_0qvjn"]
+[ext_resource type="Texture2D" uid="uid://c2wp2645q2dhf" path="res://art/picture/1.png" id="5_5y63k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eci5i"]
+font_size = 32
+shadow_size = 4
+shadow_color = Color(0.964706, 0.588235, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b044y")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8my4s")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -52.0
+offset_right = 64.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "睡觉尖塔"
+label_settings = SubResource("LabelSettings_eci5i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -3.0
+offset_right = 30.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "继续游戏"
+
+[node name="NewRun" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "新游戏"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "退出"
+
+[node name="Gill" type="Sprite2D" parent="."]
+position = Vector2(224, 112)
+texture = ExtResource("2_koocq")
+
+[node name="Monster1" type="Sprite2D" parent="."]
+position = Vector2(34, 92)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2vd4q")
+
+[node name="Monster2" type="Sprite2D" parent="."]
+position = Vector2(49, 108)
+scale = Vector2(2, 2)
+texture = ExtResource("4_0qvjn")
+
+[node name="Monster3" type="Sprite2D" parent="."]
+position = Vector2(30, 117)
+scale = Vector2(2, 2)
+texture = ExtResource("5_5y63k")
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

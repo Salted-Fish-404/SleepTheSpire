@@ -22,6 +22,20 @@ signal enemy_turn_ended
 
 #屏幕场景相关信号
 signal battle_over_screen_requested(test: String, type: BattleOverPanel.Type)
+signal battle_won
 
+#地图相关信号
+signal map_exited
 
+#商店相关信号
+signal shop_exited
+
+#篝火相关信号
+signal campfire_exited
+
+#战斗奖励相关信号
+signal battle_reward_exited
+
+#宝箱相关信号
+signal treasure_room_exited
 
