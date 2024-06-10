@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cthjxpyg7ea0h"]
+[gd_scene load_steps=9 format=3 uid="uid://cthjxpyg7ea0h"]
 
 [ext_resource type="Texture2D" uid="uid://dnfbippu842mh" path="res://art/picture/background_spire.png" id="1_8my4s"]
 [ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_b044y"]
 [ext_resource type="Texture2D" uid="uid://h50nqkpghwj7" path="res://art/picture/4.png" id="2_koocq"]
+[ext_resource type="AudioStream" uid="uid://brardby08mjv8" path="res://art/audio/Borislav Slavov - Main Theme Part I.mp3" id="2_pnovf"]
 [ext_resource type="Texture2D" uid="uid://djat25nga0hek" path="res://art/picture/2.png" id="3_2vd4q"]
 [ext_resource type="Texture2D" uid="uid://bqqw1h6kjs7pi" path="res://art/picture/3.png" id="4_0qvjn"]
 [ext_resource type="Texture2D" uid="uid://c2wp2645q2dhf" path="res://art/picture/1.png" id="5_5y63k"]
@@ -20,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b044y")
+music = ExtResource("2_pnovf")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -65,6 +67,7 @@ theme_override_constants/separation = 4
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "继续游戏"
 

@@ -25,7 +25,7 @@ signal battle_over_screen_requested(test: String, type: BattleOverPanel.Type)
 signal battle_won
 
 #地图相关信号
-signal map_exited
+signal map_exited(room: Room)
 
 #商店相关信号
 signal shop_exited

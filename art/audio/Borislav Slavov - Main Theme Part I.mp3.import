@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brardby08mjv8"
+path="res://.godot/imported/Borislav Slavov - Main Theme Part I.mp3-f3442030b90dcbb0842feb232cd0e0d5.mp3str"
+
+[deps]
+
+source_file="res://art/audio/Borislav Slavov - Main Theme Part I.mp3"
+dest_files=["res://.godot/imported/Borislav Slavov - Main Theme Part I.mp3-f3442030b90dcbb0842feb232cd0e0d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

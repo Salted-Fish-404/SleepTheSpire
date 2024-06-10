@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://covh26gg0mu35"]
+[gd_scene load_steps=13 format=3 uid="uid://covh26gg0mu35"]
 
 [ext_resource type="Script" path="res://scenes/ui/character_selector.gd" id="1_3at8h"]
 [ext_resource type="Texture2D" uid="uid://ddrkpjti5w8ep" path="res://art/picture/background_choose.png" id="2_pp3ah"]
 [ext_resource type="Resource" uid="uid://xuh4nekq1lem" path="res://scenes/run/run_startup.tres" id="2_wqcgh"]
+[ext_resource type="AudioStream" uid="uid://7u4rhf285u0k" path="res://art/audio/start_menu.wav" id="3_7p4a8"]
 [ext_resource type="Texture2D" uid="uid://cnax6s2ldafs4" path="res://art/picture/shane.png" id="3_42vnu"]
 [ext_resource type="Texture2D" uid="uid://b8jsoadbyvqoc" path="res://art/picture/box.png" id="3_utdn7"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="5_0k6vi"]
@@ -30,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3at8h")
 run_startup = ExtResource("2_wqcgh")
+music = ExtResource("3_7p4a8")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

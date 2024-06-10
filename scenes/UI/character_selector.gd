@@ -1,12 +1,13 @@
 extends Control
 
-const RUN_SCENE = preload("res://scenes/run/run.tscn")
-const WARRIOR_STATS = preload("res://characters/warrior/warrior.tres")
-const WIZARD_STATS = preload("res://characters/wizard/wizard.tres")
-const ASSASSIN_STATS = preload("res://characters/assassin/assassin.tres")
+const RUN_SCENE := preload("res://scenes/run/run.tscn")
+const WARRIOR_STATS := preload("res://characters/warrior/warrior.tres")
+const WIZARD_STATS := preload("res://characters/wizard/wizard.tres")
+const ASSASSIN_STATS := preload("res://characters/assassin/assassin.tres")
 
 @export var run_startup: RunStartup
 
+@export var music: AudioStream
 @onready var title: Label = %Title
 @onready var description: Label = %Description
 @onready var character_portrait: TextureRect = %CharacterPortrait
@@ -14,6 +15,7 @@ const ASSASSIN_STATS = preload("res://characters/assassin/assassin.tres")
 var current_character: CharacterStats : set = set_current_character
 
 func _ready() -> void:
+	MusicPlayer.play(music, true)
 	set_current_character(WARRIOR_STATS)
 
 func set_current_character(new_character: CharacterStats) -> void:
@@ -23,6 +25,7 @@ func set_current_character(new_character: CharacterStats) -> void:
 	character_portrait.texture = current_character.portrait
 
 func _on_start_button_pressed() -> void:
+	MusicPlayer.stop()
 	print("使用%s开始新的一觉" % current_character.character_name)
 	run_startup.type = RunStartup.Type.NEW_RUN
 	run_startup.picked_character = current_character

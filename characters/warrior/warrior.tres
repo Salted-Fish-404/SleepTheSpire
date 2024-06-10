@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://b3jf8oboj7n6n"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=6 format=3 uid="uid://b3jf8oboj7n6n"]
 
 [ext_resource type="Script" path="res://custom_resources/character_stats.gd" id="1_6vhqp"]
 [ext_resource type="Texture2D" uid="uid://ddfhknhvo8l3y" path="res://art/picture/shane_sprite.png" id="1_q2cjy"]
 [ext_resource type="Texture2D" uid="uid://cnax6s2ldafs4" path="res://art/picture/shane.png" id="2_sbi3f"]
+[ext_resource type="Resource" uid="uid://cd6ow6xgm1hem" path="res://characters/warrior/warrior_draftable_cards.tres" id="2_wc7wp"]
 [ext_resource type="Resource" uid="uid://b6grq8h85i74r" path="res://characters/warrior/warrior_starting_deck.tres" id="3_y8vrl"]
 
 [resource]
@@ -11,6 +12,7 @@ character_name = "谢恩"
 description = "我喝酒，我养鸡，我昏过去"
 portrait = ExtResource("2_sbi3f")
 starting_deck = ExtResource("3_y8vrl")
+draftable_cards = ExtResource("2_wc7wp")
 cards_per_trun = 5
 max_mana = 3
 max_health = 70

@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://csu3mm2q4uo3u"]
+
+[ext_resource type="Texture2D" uid="uid://bw4wxuo80gasr" path="res://art/picture/Rock Crab.png" id="1_qqum3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8wab"]
+atlas = ExtResource("1_qqum3")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l46fo"]
+atlas = ExtResource("1_qqum3")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rksh"]
+atlas = ExtResource("1_qqum3")
+region = Rect2(48, 0, 16, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8wab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l46fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rksh")
+}],
+"loop": true,
+"name": &"crab_idle",
+"speed": 5.0
+}]

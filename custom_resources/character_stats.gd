@@ -8,6 +8,7 @@ extends Stats
 
 @export_group("Gameplay Data")
 @export var starting_deck: CardPile
+@export var draftable_cards: CardPile
 @export var cards_per_trun: int
 @export var max_mana: int
 
@@ -21,7 +22,7 @@ func set_mana(value: int) -> void:
 	stats_changed.emit()
 
 func reset_mana() -> void:
-	self.mana = max_mana
+	mana = max_mana
 	
 func take_damage(damage: int) -> void:
 	var initial_health := health

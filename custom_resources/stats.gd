@@ -5,6 +5,7 @@ signal stats_changed
 
 @export var max_health := 1
 @export var art: Texture
+#@export var animation: SpriteFrames
 
 var health: int : set = set_health
 var block: int : set = set_block
@@ -22,11 +23,11 @@ func take_damage(damage : int) -> void:
 		return
 	var initial_damage = damage
 	damage = clampi(damage - block, 0, damage)
-	self.block = clampi(block - initial_damage, 0, block)
-	self.health -= damage
+	block = clampi(block - initial_damage, 0, block)
+	health -= damage
 	
 func heal(amount : int) ->void:
-	self.health += amount
+	health += amount
 	
 func create_instance() -> Resource:
 	var instance: Stats = self.duplicate()
