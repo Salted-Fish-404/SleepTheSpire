@@ -45,8 +45,12 @@ func draw_cards(amount: int) -> void:
 	)
 
 func discard_cards() -> void:
+	if hand.get_child_count() == 0:
+		Events.player_hand_discarded.emit()
+		return
+	
 	var tween := create_tween()
-	for card_ui in hand.get_children():
+	for card_ui: CardUI in hand.get_children():
 		#将当前牌添加到弃牌堆
 		tween.tween_callback(character.discard.add_card.bind(card_ui.card))
 		#调用hands.discard_card函数
