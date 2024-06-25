@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://785f3fmvbrg7"]
+[gd_scene load_steps=8 format=3 uid="uid://785f3fmvbrg7"]
 
 [ext_resource type="Script" path="res://scenes/map/map.gd" id="1_goqv2"]
+[ext_resource type="AudioStream" uid="uid://cyatt4d3lgwb5" path="res://art/audio/Scott Lloyd Shelly - Boss 1.mp3" id="2_i12xv"]
 [ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="2_ni8ba"]
 [ext_resource type="Texture2D" uid="uid://dprp4b1tdopxt" path="res://art/picture/ocean.png" id="3_12ile"]
 [ext_resource type="Resource" uid="uid://x62chpwyqswe" path="res://battles/battle_stats_pool.tres" id="3_o4fjb"]
@@ -14,6 +15,7 @@ width = 32
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_goqv2")
+music = ExtResource("2_i12xv")
 
 [node name="Visuals" type="Node2D" parent="."]
 

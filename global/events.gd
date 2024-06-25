@@ -19,10 +19,12 @@ signal player_died
 #敌人相关信号
 signal enemy_action_completed(enemy: Enemy)
 signal enemy_turn_ended
+signal enemy_died(enemy: Enemy)
 
 #屏幕场景相关信号
 signal battle_over_screen_requested(test: String, type: BattleOverPanel.Type)
 signal battle_won
+signal status_tooltip_requested(statuses: Array[Status])
 
 #地图相关信号
 signal map_exited(room: Room)

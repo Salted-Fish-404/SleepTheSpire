@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw4wxuo80gasr"
-path="res://.godot/imported/Rock Crab.png-d90b107bc9ae1d45b97d1447a571146e.ctex"
+uid="uid://br1kke3vdtogr"
+path="res://.godot/imported/metal_head.png-5ac166108b476ce92bc9ee27ce670071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/picture/Rock Crab.png"
-dest_files=["res://.godot/imported/Rock Crab.png-d90b107bc9ae1d45b97d1447a571146e.ctex"]
+source_file="res://art/picture/metal_head.png"
+dest_files=["res://.godot/imported/metal_head.png-5ac166108b476ce92bc9ee27ce670071.ctex"]
 
 [params]
 

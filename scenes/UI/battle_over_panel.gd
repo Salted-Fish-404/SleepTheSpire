@@ -9,10 +9,20 @@ enum Type {WIN, LOSE}
 
 func _ready() -> void:
 	continue_button.pressed.connect(
-		func(): Events.battle_won.emit()
+		#func(): Events.battle_won.emit()
+		_on_continue_button_pressed
 	)
-	restart_button.pressed.connect(get_tree().reload_current_scene)
+	restart_button.pressed.connect(
+		#get_tree().reload_current_scene
+		_on_restart_button_pressed
+	)
 	Events.battle_over_screen_requested.connect(show_screen)
+	
+func _on_restart_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+	
+func _on_continue_button_pressed() -> void:
+	Events.battle_won.emit()
 	
 func show_screen(text: String, type: Type) -> void:
 	label.text = text

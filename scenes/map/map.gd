@@ -5,6 +5,8 @@ const SCROLL_SPEED := 15
 const MAP_ROOM := preload("res://scenes/map/map_room.tscn")
 const MAP_LINE := preload("res://scenes/map/map_line.tscn")
 
+@export var music: AudioStream
+
 @onready var map_generator: MapGenerator = $MapGenerator
 @onready var lines: Node2D = %Lines
 @onready var rooms: Node2D = %Rooms
@@ -17,6 +19,8 @@ var last_room: Room
 var camera_edge_y: float
 
 func _ready() -> void:
+	MusicPlayer.play(music, true)
+	music.loop = true
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1)
 	
 	

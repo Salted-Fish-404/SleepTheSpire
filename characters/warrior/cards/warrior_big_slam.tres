@@ -11,7 +11,8 @@ type = 0
 rarity = 1
 target = 1
 cost = 2
+exhausts = false
 icon = ExtResource("1_68pye")
-tooltip_text = "[center]造成 [color=\"ff0000\"]10[/color] 点伤害
+tooltip_text = "[center]造成 [color=\"ff0000\"]%s[/color] 点伤害
 施加 2 点[color=\"ffdf00\"]易伤[/color][/center]"
 sound = ExtResource("3_riqba")

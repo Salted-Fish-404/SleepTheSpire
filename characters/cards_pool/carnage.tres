@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ctcu0n1w48pck"]
+
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://art/tile_0074.png" id="1_ijufd"]
+[ext_resource type="Script" path="res://characters/cards_pool/carnage.gd" id="2_2bw2v"]
+
+[resource]
+script = ExtResource("2_2bw2v")
+id = ""
+type = 0
+rarity = 1
+target = 1
+cost = 2
+exhausts = true
+icon = ExtResource("1_ijufd")
+tooltip_text = "[center]造成 [color=\"ff0000\"]%s[/color] 点伤害
+消耗[/center]"

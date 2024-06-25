@@ -3,7 +3,7 @@ extends Node2D
 
 @export var battle_stats: BattleStats
 @export var char_stats: CharacterStats
-@export var music: AudioStream
+#@export var music: AudioStream
 
 @onready var battle_ui: BattleUI = $BattleUI
 @onready var player_handler: PlayerHandler = $PlayerHandler
@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 func start_battle() -> void:
 	get_tree().paused = false
-	MusicPlayer.play(music, true)
+	#MusicPlayer.play(music, true)
 	
 	battle_ui.char_stats = char_stats
 	player.stats = char_stats

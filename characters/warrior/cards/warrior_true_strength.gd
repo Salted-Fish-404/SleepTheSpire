@@ -1,4 +1,9 @@
 extends Card
 
-func apply_effects(_targets: Array[Node]) -> void:
-	print("你的力量提升了2点")
+const TRUE_STRENGTH_FORM_STATUS = preload("res://statuses/true_strength_form.tres")
+
+func apply_effects(targets: Array[Node], _modifiers: ModifierHandler) -> void:
+	var status_effect := StatusEffect.new()
+	var true_strength := TRUE_STRENGTH_FORM_STATUS.duplicate()
+	status_effect.status = true_strength
+	status_effect.execute(targets)

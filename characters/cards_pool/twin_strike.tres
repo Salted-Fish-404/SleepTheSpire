@@ -11,6 +11,7 @@ type = 0
 rarity = 0
 target = 1
 cost = 1
+exhausts = false
 icon = ExtResource("1_o3emo")
-tooltip_text = "[center]造成 [color=\"ff0000\"]6[/color] 点伤害 2 次[/center]"
+tooltip_text = "[center]造成 [color=\"ff0000\"]%s[/color] 点伤害 2 次[/center]"
 sound = ExtResource("3_tdncf")

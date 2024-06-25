@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://jg7nkxb3ok6j"]
+
+[ext_resource type="PackedScene" uid="uid://bt45ac3lqgdxf" path="res://enemies/metal_head/metal_head_ai.tscn" id="1_cw166"]
+[ext_resource type="Script" path="res://custom_resources/enemy_stats.gd" id="1_yy747"]
+[ext_resource type="Texture2D" uid="uid://br1kke3vdtogr" path="res://art/picture/metal_head.png" id="2_1ewp0"]
+
+[resource]
+script = ExtResource("1_yy747")
+ai = ExtResource("1_cw166")
+max_health = 20
+art = ExtResource("2_1ewp0")
