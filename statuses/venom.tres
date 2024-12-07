@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="VenomStatus" load_steps=3 format=3 uid="uid://dc5o5i62ytdvy"]
+
+[ext_resource type="Texture2D" uid="uid://clbji84e7ec6m" path="res://art/tile_0126.png" id="1_0ko7u"]
+[ext_resource type="Script" path="res://statuses/venom.gd" id="2_sf28u"]
+
+[resource]
+script = ExtResource("2_sf28u")
+id = "venom"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("1_0ko7u")
+tooltip = "腐蚀：接下来的 %s 回合，每回合收到等于腐蚀层数的伤害，回合结束时层数减 1"

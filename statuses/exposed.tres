@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ExposedStatus" load_steps=3 format=3 uid="uid://c5cql8wifkfyv"]
+
+[ext_resource type="Texture2D" uid="uid://dsqlstvvan7ch" path="res://art/expose.png" id="1_5ijng"]
+[ext_resource type="Script" path="res://statuses/exposed.gd" id="2_qkqwy"]
+
+[resource]
+script = ExtResource("2_qkqwy")
+id = "exposed"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("1_5ijng")
+tooltip = "易伤：在 %s 回合内收到的伤害增加 50%%"

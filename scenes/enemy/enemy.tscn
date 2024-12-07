@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxwen1tflmn0k"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_kxqqs"]
+[ext_resource type="Texture2D" uid="uid://bpko1rtbjsvki" path="res://art/picture/bat.png" id="2_tqa8c"]
+[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://art/arrow.png" id="3_fss47"]
+[ext_resource type="PackedScene" uid="uid://2je1hoimhl7d" path="res://scenes/ui/stats_ui.tscn" id="4_jgyk6"]
+[ext_resource type="PackedScene" uid="uid://hybeinwdv56o" path="res://scenes/ui/intent_ui.tscn" id="5_3jipv"]
+[ext_resource type="PackedScene" uid="uid://bc7lprcp2f2bu" path="res://scenes/status_handler/status_handler.tscn" id="6_iqtgx"]
+[ext_resource type="PackedScene" uid="uid://dws4kjq0eoo1l" path="res://scenes/modifier_handler/modifier_handler.tscn" id="7_1lu3a"]
+[ext_resource type="PackedScene" uid="uid://bvusg0er6jd1o" path="res://scenes/modifier_handler/modifier.tscn" id="8_j5hrn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouye3"]
+
+[sub_resource type="Animation" id="Animation_8vwk4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f31rm"]
+resource_name = "idle_4"
+length = 0.6
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfjoh"]
+_data = {
+"RESET": SubResource("Animation_8vwk4"),
+"idle_4": SubResource("Animation_f31rm")
+}
+
+[node name="Enemy" type="Area2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_kxqqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tqa8c")
+hframes = 4
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(16, 0)
+rotation = -1.5708
+texture = ExtResource("3_fss47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ouye3")
+
+[node name="StatsUI" parent="." instance=ExtResource("4_jgyk6")]
+offset_top = 10.0
+offset_bottom = 26.0
+
+[node name="IntentUI" parent="." instance=ExtResource("5_3jipv")]
+offset_top = -26.0
+offset_bottom = -10.0
+
+[node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("6_iqtgx")]
+offset_left = -28.0
+offset_top = 25.0
+offset_right = -28.0
+offset_bottom = 25.0
+status_owner = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cfjoh")
+}
+autoplay = "idle_4"
+
+[node name="ModifierHandler" parent="." instance=ExtResource("7_1lu3a")]
+
+[node name="DamageDealtModifier" parent="ModifierHandler" instance=ExtResource("8_j5hrn")]
+
+[node name="DamageTakenModifier" parent="ModifierHandler" instance=ExtResource("8_j5hrn")]
+type = 1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://wq1qpg3v0c4m"]
+
+[ext_resource type="Texture2D" uid="uid://dsqlstvvan7ch" path="res://art/expose.png" id="1_gwjh2"]
+[ext_resource type="Script" path="res://scenes/ui/status_tooltip.gd" id="1_r7011"]
+[ext_resource type="Resource" uid="uid://drap2b5wub07k" path="res://statuses/muscle.tres" id="2_2m5ca"]
+
+[node name="StatusTooltip" type="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+offset_right = 150.0
+offset_bottom = 27.0
+script = ExtResource("1_r7011")
+status = ExtResource("2_2m5ca")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("1_gwjh2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = -1
+text = "易伤：接下来的 %s 回合受到的伤害增加 50%"
+vertical_alignment = 1
+autowrap_mode = 2

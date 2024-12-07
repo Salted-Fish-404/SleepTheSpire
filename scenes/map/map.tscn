@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://785f3fmvbrg7"]
+
+[ext_resource type="Script" path="res://scenes/map/map.gd" id="1_goqv2"]
+[ext_resource type="AudioStream" uid="uid://cyatt4d3lgwb5" path="res://art/audio/Scott Lloyd Shelly - Boss 1.mp3" id="2_i12xv"]
+[ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="2_ni8ba"]
+[ext_resource type="Texture2D" uid="uid://dprp4b1tdopxt" path="res://art/picture/ocean.png" id="3_12ile"]
+[ext_resource type="Resource" uid="uid://x62chpwyqswe" path="res://battles/battle_stats_pool.tres" id="3_o4fjb"]
+
+[sub_resource type="Gradient" id="Gradient_pt76s"]
+colors = PackedColorArray(0.197937, 0.197937, 0.197937, 1, 0.360784, 0.203922, 0.203922, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yva4j"]
+gradient = SubResource("Gradient_pt76s")
+width = 32
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_goqv2")
+music = ExtResource("2_i12xv")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Lines" type="Node2D" parent="Visuals"]
+unique_name_in_owner = true
+
+[node name="Rooms" type="Node2D" parent="Visuals"]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(128, 72)
+
+[node name="MapGenerator" type="Node" parent="."]
+script = ExtResource("2_ni8ba")
+battle_stats_pool = ExtResource("3_o4fjb")
+
+[node name="MapBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="MapBackground"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_yva4j")
+
+[node name="TextureRect" type="TextureRect" parent="MapBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_12ile")
+
+[node name="ColorRect" type="ColorRect" parent="MapBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.588235)

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://crn4ymi0ltfky"]
+
+[ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://art/tile_0127.png" id="1_mq48b"]
+[ext_resource type="Script" path="res://characters/warrior/cards/warrior_true_strength.gd" id="2_dpw2s"]
+[ext_resource type="AudioStream" uid="uid://du6bkl4ktg50f" path="res://art/audio/true_strength.ogg" id="3_kqe0l"]
+
+[resource]
+script = ExtResource("2_dpw2s")
+id = "warrior_true_strength"
+type = 2
+rarity = 2
+target = 0
+cost = 3
+exhausts = false
+icon = ExtResource("1_mq48b")
+tooltip_text = "[center]每回合给予 2 点[color=\"ffdf00\"]力量[/color][/center]"
+sound = ExtResource("3_kqe0l")
